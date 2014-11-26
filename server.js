@@ -104,6 +104,11 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+        
+        self.routes['/styles.css'] = function(req, res) {
+            res.setHeader('Content-Type', 'text/css');
+            res.send(self.cache_get('styles.css') );
+        };
     };
 
 
