@@ -45,6 +45,7 @@ var SampleApp = function() {
         //  Local cache for static content.
         self.zcache['index.html'] = fs.readFileSync('./index.html');
         self.zcache['styles.css'] = fs.readFileSync('./styles.css');
+        self.zcache['elasticgui.html'] = fs.readFileSync('./elasticgui.html');
     };
 
 
@@ -110,6 +111,12 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/css');
             res.send(self.cache_get('styles.css') );
         };
+        
+        self.routes['/elasticgui'] = function(req, res) {
+            res.setHeader('Content-Type', 'text/html');
+            res.send(self.cache_get('elasticgui.html') );
+        };
+    };
     };
 
 
