@@ -117,7 +117,6 @@ var SampleApp = function() {
             res.send(self.cache_get('elasticgui.html') );
         };
     };
-    };
 
 
     /**
