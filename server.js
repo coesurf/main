@@ -46,6 +46,7 @@ var SampleApp = function() {
         self.zcache['index.html'] = fs.readFileSync('./index.html');
         self.zcache['styles.css'] = fs.readFileSync('./styles.css');
         self.zcache['elasticgui.html'] = fs.readFileSync('./elasticgui.html');
+        self.zcache['coesurf.html'] = fs.readFileSync('./coesurf.html');
     };
 
 
@@ -115,6 +116,11 @@ var SampleApp = function() {
         self.routes['/elasticgui'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('elasticgui.html') );
+        };
+        
+        self.routes['/coesurf'] = function(req, res) {
+            res.setHeader('Content-Type', 'text/html');
+            res.send(self.cache_get('coesurf.html') );
         };
     };
 
