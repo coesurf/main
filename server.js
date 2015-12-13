@@ -46,6 +46,7 @@ var SampleApp = function() {
         self.zcache['index.html'] = fs.readFileSync('./index.html');
         self.zcache['styles.css'] = fs.readFileSync('./styles.css');
         self.zcache['elasticgui.html'] = fs.readFileSync('./elasticgui.html');
+        self.zcache['giddlebug.html'] = fs.readFileSync('./giddlebug.html');
         self.zcache['coesurf.html'] = fs.readFileSync('./coesurf.html');
     };
 
@@ -108,6 +109,8 @@ var SampleApp = function() {
             var host = req.headers['host'];
             if (host.indexOf('elasticgui') > -1) {
                res.send(self.cache_get('elasticgui.html') );
+            } else if (host.indexOf('giddlebug') > -1) {
+               res.send(self.cache_get('giddlebug.html') );
             } else {
                res.send(self.cache_get('coesurf.html') );
             }
