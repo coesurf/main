@@ -126,6 +126,11 @@ var SampleApp = function() {
             res.send(self.cache_get('elasticgui.html') );
         };
         
+        self.routes['/giddlebug'] = function(req, res) {
+            res.setHeader('Content-Type', 'text/html');
+            res.send(self.cache_get('giddlebug.html') );
+        };
+        
         self.routes['/coesurf'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('coesurf.html') );
