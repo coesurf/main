@@ -105,7 +105,8 @@ var SampleApp = function() {
 
         self.routes['/'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
-            if (req.headers['host'].indexOf('elasticgui') > -1) {
+            var host = req.headers['host'];
+            if (host.indexOf('elasticgui') > -1) {
                res.send(self.cache_get('elasticgui.html');
             } else {
                res.send(self.cache_get('coesurf.html') );
